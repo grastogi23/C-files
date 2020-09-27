@@ -1,13 +1,16 @@
 #include<stdio.h>
 main()
 {
-    int a[5],i,j,temp;
+    int n;
+    printf("Enter the number of terms:");
+    scanf("%d",&n);
+    int a[n],i,j,temp;
     printf("Enter the elements:");
-    for(i=0;i<5;i++)
+    for(i=0;i<n;i++)
         scanf("%d",&a[i]);
-    for(i=0;i<4;i++)
+    for(i=0;i<n-1;i++)
     {
-            for(j=0;j<4-i;j++)
+            for(j=0;j<n-1-i;j++)
                 if(a[j]>a[j+1])
             {
                 temp=a[j];
@@ -15,7 +18,7 @@ main()
                 a[j+1]=temp;
             }
     }
-    printf("Sorted array");
-    for(int k=0;k<5;k++)
+    printf("Sorted array is :");
+    for(int k=0;k<n;k++)
         printf("%d ",a[k]);
 }
